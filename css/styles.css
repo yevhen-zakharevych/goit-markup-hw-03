@@ -7,9 +7,9 @@
   --background-color: #ffffff;
   --color-primary: #4d5ae5;
   --color-accent: #e7e9fc;
-  --color-light: #f4f4fd;
+  --color-light: #f4f4fd; /* cloud */
   --color-active: #404bbf;
-  --color-dark: #2e2f42;
+  --color-dark: #2e2f42; /* navy-blue */
   --color-success: #31d0aa;
   --color-white: #ffffff;
 }
@@ -23,6 +23,16 @@ body {
   letter-spacing: 0.02em;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
 a {
   color: currentColor;
   text-decoration: none;
@@ -30,24 +40,55 @@ a {
 
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-address {
-  font-style: normal;
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
   position: absolute;
-  white-space: nowrap;
   width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 /* #endregion Base */
 
-/* #region Logo */
+/* #region Header */
+.header {
+  border-bottom: 1px solid var(--color-accent);
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
 .logo-link {
   font-family: var(--font-family-secondary);
   font-weight: 800;
@@ -55,15 +96,18 @@ address {
   line-height: 1.167;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  margin-right: 76px;
 }
 
 .logo-link-accent {
   color: var(--color-primary);
 }
 
-/* #endregion Logo */
+.nav-list {
+  display: flex;
+  gap: 40px;
+}
 
-/* #region Header */
 .nav-link {
   font-weight: 500;
   color: var(--color-dark);
@@ -73,6 +117,16 @@ address {
 .nav-link:focus,
 .nav-link:active {
   color: var(--color-active);
+}
+
+.address-list {
+  display: flex;
+  margin-left: auto;
+  gap: 40px;
+}
+
+.address-link {
+  font-style: normal;
 }
 
 .address-link:hover,
@@ -89,11 +143,22 @@ address {
   background-color: var(--color-dark);
 }
 
+.footer .container {
+  padding: 100px 0;
+}
+
+.footer-text {
+  margin-top: 16px;
+  max-width: 264px;
+}
+
 /* #endregion Footer */
 
 /* #region Studio Page */
 .hero-section {
   background-color: var(--color-dark);
+  padding: 188px 0;
+  text-align: center;
 }
 
 .hero-title {
@@ -102,6 +167,8 @@ address {
   line-height: 1.07143;
   letter-spacing: 0.02em;
   text-align: center;
+  max-width: 496px;
+  margin: 0 auto 48px;
 }
 
 .hero-button {
@@ -117,6 +184,7 @@ address {
   border-radius: 4px;
   box-shadow: 0px 4px 4px 0px #00000026;
   font-size: 16px;
+  padding: 16px 32px;
 }
 
 .hero-button:focus,
@@ -125,12 +193,26 @@ address {
   background-color: var(--color-active);
 }
 
+.advantages-section .container {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
 .advantages-title {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--color-dark);
+}
+
+.advantages-list {
+  display: flex;
+  gap: 24px;
+}
+
+.advantages-item {
+  flex-basis: calc((100% - 24px * 3) / 4);
 }
 
 .portfolio-heading,
@@ -144,8 +226,41 @@ address {
   color: var(--color-dark);
 }
 
+.studio-portfolio-section {
+  padding-bottom: 120px;
+}
+
+.portfolio-heading {
+  margin-bottom: 72px;
+}
+
+.studio-portfolio-list {
+  display: flex;
+  gap: 24px;
+}
+
+.team-section {
+  background-color: var(--color-light);
+}
+
+.team-section .container {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.team-heading {
+  margin-bottom: 72px;
+}
+
+.team-list {
+  display: flex;
+  gap: 24px;
+}
+
 .team-item {
   text-align: center;
+  background-color: var(--color-white);
+  flex-basis: calc((100% - 24px * 3) / 4);
 }
 
 .team-member-name {
@@ -154,6 +269,12 @@ address {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--color-dark);
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+.team-member-info {
+  margin-bottom: 32px;
 }
 /* #endregion Studio Page */
 
